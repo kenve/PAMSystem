@@ -1,0 +1,126 @@
+﻿<Window x:Class="PAMSystem.UI.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="725" Width="600" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Loaded="Window_Loaded" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+    <Grid>
+        <DockPanel >
+            <Grid DockPanel.Dock="Top">
+                <!--设置背景颜色-->
+                <Grid.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox">
+                        <GradientStop Color="#FFF3F1F1" Offset="0"></GradientStop>
+                        <GradientStop Color="#FFC7C7C7" Offset="0.6"></GradientStop>
+                        <GradientStop Color="#424242" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid Height="55" Background="#3E3E42">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <!--标题栏-->
+                    <StackPanel Orientation="Horizontal">
+                        <Label Content="Wteam个人记账系统" FontSize="17" Width="205" Foreground="White" Margin="0,10,0,0" />
+                        <Button x:Name="btnMinimiz" Content="一"  Background="#3E3E42" Foreground="White" FontWeight="Bold" Margin="330,15,0,11" Width="25" MouseEnter="btnMinimiz_MouseEnter" MouseLeave="btnMinimiz_MouseLeave" Click="btnMinimiz_Click" Focusable="False" />
+                        <Button x:Name="btnClose"  Background="#3E3E42" Foreground="White" Content="X" FontWeight="Bold" Width="25" Margin="5,15,0,11" MouseEnter="btnClose_MouseEnter" MouseLeave="btnClose_MouseLeave" Click="btnClose_Click" Focusable="True"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            <!--菜单栏-->
+            <Menu DockPanel.Dock="Top" Height="25" FontSize="13">
+                <MenuItem Header="系统管理">
+                    <MenuItem Name="menuExist" Header="退出系统" Click="menuExist_Click" ></MenuItem>
+                    <MenuItem Name="menuLogOff" Header="注销系统" Click="menuLogOff_Click"  ></MenuItem>
+                </MenuItem>
+                <MenuItem Header="账户管理" >
+                    <MenuItem Header="修改密码" Name="menuEditOperator" Click="menuEditOperator_Click"/>
+                    <MenuItem Header="添加账户" Name="menuAddOperator" Click="menuAddOperator_Click" ></MenuItem>
+                    <MenuItem Header="查看操作信息" Name="menuSearchOperationLog" Click="menuSearchOperationLog_Click"  ></MenuItem>
+                    <MenuItem Header="删除此账户" Name="menuDeletedOperator" Click="menuDeletedOperator_Click"></MenuItem>
+                    </MenuItem>
+                <MenuItem Header="收入管理">
+                    <MenuItem Header="查看收入" Name="menuShowIncome" Click="menuShowIncome_Click" ></MenuItem>
+                    <MenuItem Header="新增收入" Name="menuAddIncome" Click ="menuAddIncome_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="支出管理">
+                    <MenuItem Header="查看支出" Name="menuShowExpense" Click="menuShowExpense_Click"></MenuItem>
+                    <MenuItem Header="新增支出" Name="menuAddExpense" Click="menuAddExpense_Click"></MenuItem>
+                </MenuItem>
+                <MenuItem Header="余额管理">
+                    <MenuItem  Header="查看余额" Name="menuShowBalance" Click="menuShowBalance_Click" ></MenuItem>
+                    <MenuItem Header="增加余额" Name="menuAddBalance" Click="menuAddBalance_Click" ></MenuItem>
+                </MenuItem>
+            </Menu>
+            <!--工具栏-->
+            <ToolBar  DockPanel.Dock="Top" Height="30">
+                <Button Name="btnAdd" ToolTip="添加" Click="btnAdd_Click">
+                    <Image Source="Images/add.ico"></Image>
+                </Button>
+                <Button Name="btnEdit" ToolTip="修改" Click="btnEdit_Click">
+                    <Image Source="Images/edit.ico"></Image>
+                </Button>
+                <Button Name="btnDelete" ToolTip="删除" Click="btnDelete_Click">
+                    <Image Source="Images/delete.ico" ></Image>
+                </Button>
+                <Button Name="btnFind" ToolTip="搜索" Click="btnFind_Click">
+                    <Image Source="Images/find.ico" ></Image>
+                </Button>
+                <Button Name="btnExportToExcel" ToolTip="导出到Excel表中" Click="btnExportToExcel_Click">
+                    <Image Source="Images/excel.png"></Image>
+                </Button>
+                <Button Name="btnRefresh" ToolTip="刷新" Click="btnRefresh_Click">
+                    <Image Source="Images/refresh.ico"></Image>
+                </Button>
+                <Button Name="btnAbout" ToolTip="关于" Click="btnAbout_Click">
+                    <Image Source="Images/about.ico"></Image>
+                </Button>
+                <Button Name="btnHelp" ToolTip="帮助">
+                    <Image Source="Images/help.ico"/>
+                </Button>
+
+                <!--qq联系我-->
+                <Button Background="Aqua"  Name="btnCallSa" ToolTip="QQ联系开发者" Margin="290,0,0,0" Click="btnCallSa_Click" HorizontalAlignment="Center" HorizontalContentAlignment="Center">
+                    <Image Source="Images/callme.png" />
+                </Button>
+            </ToolBar>
+            <!--搜索栏-->
+            <GroupBox  Header="搜索条件" DockPanel.Dock="Top" Height="45" Background="#FFF3F1F1" >
+                <StackPanel Orientation="Horizontal" >
+                    <CheckBox Name="ckbSearchItem" Margin="10,0,0,0"></CheckBox>
+                    <TextBlock Text="项目" Margin="0,0,5,0"/>
+                    <ComboBox Name="cmbSearchItem"  SelectedValuePath="Id" DisplayMemberPath="Name" Margin="0" Width="60" ></ComboBox>
+                    <CheckBox Name="ckbSearchMoney" Margin="5,0,0,0" ></CheckBox>
+                    <TextBlock Text="金额(元)" ></TextBlock>
+                    <TextBox  Name="txtSearchMoney" BorderBrush="Black" Width="50" ></TextBox>
+                    <CheckBox  Name="ckbSearchCostType" Margin="5,0,0,0" Checked="ckbSearchCostType_Checked"></CheckBox>
+                    <TextBlock Text="收支" Margin="0,0,5,0" />
+                    <ComboBox Name="cmbSearchCostType" SelectedValuePath="Id" DisplayMemberPath="Name" Width="50" SelectionChanged="cmbSearchCostType_SelectionChanged" ></ComboBox>
+                    <CheckBox Name="ckbSearchDate" Margin="5,0,0,0"></CheckBox>
+                    <TextBlock Text="日期" Margin="0,0,5,0" />
+                    <DatePicker Name="dpSearchBeginDate" Margin="5,0,5,0"></DatePicker>
+                    <TextBlock Text="到"></TextBlock>
+                    <DatePicker Name="dpSearchEndDate" Margin="5,0,0,0"/>
+                </StackPanel>
+            </GroupBox>
+            <!--GroupBox内嵌表格，数据显示DataGrid-->
+            <GroupBox Header="收支状况 ">
+                <GroupBox.Background>
+                    <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox">
+                        <GradientStop Color="#FFF3F1F1" Offset="0"></GradientStop>
+                        <GradientStop Color="#FFC7C7C7" Offset="0.6"></GradientStop>
+                        <GradientStop Color="#424242" Offset="1"></GradientStop>
+                    </LinearGradientBrush>
+                </GroupBox.Background>
+                <DataGrid AutoGenerateColumns="False" Name="dataGridShow"  HeadersVisibility="Column" IsReadOnly="True" Margin="10">
+                    <DataGrid.Columns>
+                        <DataGridComboBoxColumn x:Name="columnItem" Header="项目" Width="80" SelectedValueBinding="{Binding Item}" SelectedValuePath="Id" DisplayMemberPath="Name"/>
+                        <DataGridTextColumn Header="金额(元)" Width="80" Binding="{Binding Money}"></DataGridTextColumn>
+                        <DataGridComboBoxColumn x:Name="columnCostType" Header="收支" Width="80" SelectedValueBinding="{Binding CostType}" SelectedValuePath="Id" DisplayMemberPath="Name"/>
+                        <DataGridTextColumn Header="日期" Width="130" Binding="{Binding Date }"></DataGridTextColumn>
+                        <DataGridTextColumn Header="备注" Width="*" Binding="{Binding Remarks}"></DataGridTextColumn>
+                    </DataGrid.Columns>
+                </DataGrid>
+            </GroupBox>
+
+        </DockPanel>
+    </Grid>
+</Window>

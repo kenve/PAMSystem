@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMSystem.UI", "PAMSystem.UI\PAMSystem.UI.csproj", "{89DAA463-ED80-4095-99E4-78B8CF00970F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMSystem.Model", "PAMSystem.Model\PAMSystem.Model.csproj", "{D4899888-AEFE-434A-A090-6DA891BF42D7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMSystem.BLL", "PAMSystem.BLL\PAMSystem.BLL.csproj", "{38D4D036-3C12-4FFE-8D12-99554B480E0D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PAMSystem.DAL", "PAMSystem.DAL\PAMSystem.DAL.csproj", "{454F56DA-35CA-40C3-AA95-2D901B9D4CBD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{89DAA463-ED80-4095-99E4-78B8CF00970F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DAA463-ED80-4095-99E4-78B8CF00970F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DAA463-ED80-4095-99E4-78B8CF00970F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DAA463-ED80-4095-99E4-78B8CF00970F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4899888-AEFE-434A-A090-6DA891BF42D7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4899888-AEFE-434A-A090-6DA891BF42D7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4899888-AEFE-434A-A090-6DA891BF42D7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4899888-AEFE-434A-A090-6DA891BF42D7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38D4D036-3C12-4FFE-8D12-99554B480E0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38D4D036-3C12-4FFE-8D12-99554B480E0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38D4D036-3C12-4FFE-8D12-99554B480E0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38D4D036-3C12-4FFE-8D12-99554B480E0D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{454F56DA-35CA-40C3-AA95-2D901B9D4CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{454F56DA-35CA-40C3-AA95-2D901B9D4CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{454F56DA-35CA-40C3-AA95-2D901B9D4CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{454F56DA-35CA-40C3-AA95-2D901B9D4CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

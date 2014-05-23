@@ -1,0 +1,35 @@
+﻿<Window x:Class="PAMSystem.UI.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LoginWindow" Height="300" Width="400" WindowStyle="None"  AllowsTransparency="True" WindowStartupLocation="CenterScreen">
+    <Grid Name="mainGrid" >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="25*"/>
+            <RowDefinition Height="121*"/>
+        </Grid.RowDefinitions>
+		<!--设置背景颜色-->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1" MappingMode="RelativeToBoundingBox">
+                <GradientStop Color="#FFF3F1F1" Offset="0"></GradientStop>
+                <GradientStop Color="#FFC7C7C7" Offset="0.6"></GradientStop>
+                <GradientStop Color="#424242" Offset="1"></GradientStop>
+            </LinearGradientBrush>
+        </Grid.Background>
+         <!-- 顶部-->
+        <Grid Background="#3E3E42">
+            <StackPanel Orientation="Horizontal">
+                <Label Content="Wteam个人记账系统" FontSize="17" Width="205" Foreground="White" Margin="0,10,0,0" />
+                <Button x:Name="btnMinimiz" Content="一"  Background="#3E3E42" Foreground="White" FontWeight="Bold" Margin="130,10,0,11" Width="25" MouseEnter="btnMinimiz_MouseEnter" MouseLeave="btnMinimiz_MouseLeave" Click="btnMinimiz_Click" Focusable="False" />
+                <Button x:Name="btnClose"  Background="#3E3E42" Foreground="White" Content="X" FontWeight="Bold" Width="25" Margin="5,10,0,11" MouseEnter="btnClose_MouseEnter" MouseLeave="btnClose_MouseLeave" Click="btnClose_Click" Focusable="True"/>
+            </StackPanel>
+        </Grid>
+        <!-- 登录部分-->
+        <TextBox Name="txtUserName" Text="admin" HorizontalAlignment="Left" Height="25" Margin="150,60,0,0" Grid.Row="1" VerticalAlignment="Top" Width="155"/>
+        <PasswordBox Name="pwdPassword" Password="111" HorizontalAlignment="Left" Margin="150,119,0,0" Grid.Row="1" VerticalAlignment="Top" Width="155" Height="25"/>
+        <Button  Name="btnLogin" Content="登录" HorizontalAlignment="Left" Margin="130,184,0,0" Grid.Row="1" VerticalAlignment="Top" Width="65" Click="btnLogin_Click"/>
+        <Button Name="brnCancel" Content="取消" HorizontalAlignment="Left" Margin="250,184,0,0" Grid.Row="1" VerticalAlignment="Top" Width="65" Click="brnCancel_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,69,0,0" Grid.Row="1" Text="用户名" VerticalAlignment="Top" Height="17"/>
+        <TextBlock HorizontalAlignment="Left" Margin="60,129,0,0" Grid.Row="1" Text="密码" VerticalAlignment="Top" Width="36"/>
+        <TextBlock Name="txtRegister" HorizontalAlignment="Left" Margin="325,129,0,0" Grid.Row="1" Foreground="#2F90D8" Text="用户注册" VerticalAlignment="Top" MouseDown="txtRegister_MouseDown"/>
+    </Grid>
+</Window>
